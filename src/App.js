@@ -1,7 +1,18 @@
 import React, { useState } from "react";
 import ReactDOM from "react-dom";
-import { Carousel, Container, Row, Col, Card, CardDeck } from "react-bootstrap";
+import {
+  Carousel,
+  Container,
+  Row,
+  Col,
+  Card,
+  CardDeck,
+  Modal,
+  Button,
+} from "react-bootstrap";
 import Header from "./header";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { VictoryBar, VictoryChart } from "victory";
 
 const timePoints = [
   {
@@ -21,14 +32,15 @@ const timePoints = [
     card1: "Leads are low this week and of lesser quality",
     card2: "You rank in the top 34% for lead followup closes.",
   },
-  
+
   {
     id: 3,
     title: "Lead followup - 45 mins",
     color: "blue3",
     description:
+      "Higher sales conversion rates are coming from customers located in the midwest at this time.",
+    card1:
       "The highest performing salespeople in your department spend 44 min. per day on Lead followup.",
-    card1: "Higher sales conversions are coming from customers located in the midwest at this time.",
     card2: "You could spend more time on lead followup",
   },
   {
@@ -45,7 +57,7 @@ const timePoints = [
     title: "Go to lunch at 12:10, back by 12:50.",
     color: "blue4",
     description:
-      "Customers are more highly available in this time zone if you begin calls after 1:00 PST.",
+      "Customers have higher call availablity in this time zone after 1:00 PST.",
     card1:
       "The rest of your day looks good for inbound calls.  These typically increase in the afternoon.",
     card2: "You could spend more time on lead followup",
@@ -58,7 +70,7 @@ const timePoints = [
       "Sales activity dips during early August.  If you take a vacation then, your Q3 numbers should increase by about 4 percent.",
     card1:
       "The rest of your day looks good for inbound calls.  These typically increase in the afternoon.",
-    card2: "You could spend more time on lead followup",
+    card2: "You take 10% less vacation time than other staff.",
   },
 ];
 
@@ -86,6 +98,7 @@ function StoryLine(props) {
             className="d-flex justify-content-around align-items-center flex-column p-5 mx-2"
           >
             <p>{timePoint.card2}</p>
+            <InfoModal />
           </Card>
         </CardDeck>
       </div>
@@ -95,16 +108,64 @@ function StoryLine(props) {
   return <Carousel>{description}</Carousel>;
 }
 
+function InfoModal() {
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
+  return (
+    <>
+      {/* <FontAwesomeIcon icon="coffee" size="lg" /> */}
+      <Button variant="primary" onClick={handleShow}>
+        Launch demo modal
+      </Button>
+      <Modal
+        show={show}
+        size="lg"
+        centered
+        dialogClassName="modal-css"
+        onHide={handleClose}
+      >
+        <Modal.Body>
+        <VictoryChart domainPadding={40}>
+      <VictoryBar
+        style={{ data: { fill: "#6DB65B" } }}
+        data={[
+          { x: "lizard", y: 1234 },
+          { x: "snake", y: 2048 },
+          { x: "crocodile", y: 2600 },
+          { x: "alligator", y: 9000 },
+        ]}
+      />
+    </VictoryChart>
+          </Modal.Body>
+        {/* <Modal.Header closeButton>
+          <Modal.Title>More info</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>Chart here</Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={handleClose}>
+            Close
+          </Button>
+        </Modal.Footer> */}
+      </Modal>
+    </>
+  );
+}
+
 const App = () => {
   return (
-    <Container fluid>
-      <Header />
-      <Row>
-        <Col style={{ padding: 0 }}>
-          <StoryLine timePoints={timePoints} />
-        </Col>
-      </Row>
-    </Container>
+    <>
+      <Container fluid>
+        <Header />
+        <Row>
+          <Col style={{ padding: 0 }}>
+            <StoryLine timePoints={timePoints} />
+          </Col>
+        </Row>
+      </Container>
+    </>
   );
 };
 
