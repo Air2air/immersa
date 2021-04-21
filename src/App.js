@@ -12,7 +12,7 @@ import {
 } from "react-bootstrap";
 import Header from "./header";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { VictoryBar, VictoryChart } from "victory";
+import { VictoryBar, VictoryChart, VictoryAxis } from "victory";
 
 const timePoints = [
   {
@@ -120,35 +120,66 @@ function InfoModal() {
       <Button variant="primary" onClick={handleShow}>
         Launch demo modal
       </Button>
-      <Modal
-        show={show}
-        size="lg"
-        centered
-        dialogClassName="modal-css"
-        onHide={handleClose}
-      >
-        <Modal.Body>
-        <VictoryChart domainPadding={40}>
-      <VictoryBar
-        style={{ data: { fill: "#6DB65B" } }}
-        data={[
-          { x: "lizard", y: 1234 },
-          { x: "snake", y: 2048 },
-          { x: "crocodile", y: 2600 },
-          { x: "alligator", y: 9000 },
-        ]}
-      />
-    </VictoryChart>
-          </Modal.Body>
-        {/* <Modal.Header closeButton>
-          <Modal.Title>More info</Modal.Title>
+      <Modal show={show} size="lg" onHide={handleClose}>
+        <Modal.Header
+
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+          className="mt-4"
+        >
+          <Modal.Title centered>My department's peak sales period</Modal.Title>
         </Modal.Header>
-        <Modal.Body>Chart here</Modal.Body>
-        <Modal.Footer>
-          <Button variant="secondary" onClick={handleClose}>
-            Close
-          </Button>
-        </Modal.Footer> */}
+        <Modal.Body>
+          <VictoryChart
+            domainPadding={2}
+            animate={{ duration: 500 }}
+            style={{
+              background: { fill: "none" },
+            }}
+          >
+            <VictoryBar
+              style={{
+                data: { fill: "#c43a31" },
+                labels: { fill: "white" },
+              }}
+              barRatio={1}
+              data={[
+                { x: "9:00", y: 1234 },
+                { x: "10:00", y: 2048 },
+                { x: "11:00", y: 4600 },
+                { x: "12:00", y: 7000 },
+                { x: "1:00", y: 8100 },
+                { x: "2:00", y: 6000 },
+                { x: "3:00", y: 5500 },
+                { x: "4:00", y: 3200 },
+                { x: "5:00", y: 2100 },
+              ]}
+              labels={({ datum }) => datum.x}
+            />
+            <VictoryAxis
+              style={{
+                axis: { stroke: "transparent" },
+                ticks: { stroke: "transparent" },
+                tickLabels: { fill: "transparent" },
+              }}
+            />
+          </VictoryChart>
+          <Modal.Footer
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+            className="p-0 mb-4"
+          >
+            <Button size="lg" variant="primary" onClick={handleClose}>
+              Got it!
+            </Button>
+          </Modal.Footer>
+        </Modal.Body>
       </Modal>
     </>
   );

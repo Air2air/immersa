@@ -17,7 +17,7 @@ h1 {
 }
 
 b {
-  font-weight:bold;
+  font-weight: bold;
 }
 
 .header-logo {
@@ -31,7 +31,7 @@ b {
     margin: 0 auto;
     height: 90vh;
     width: 70%;
-    color:#FFF;
+    color: #fff;
   }
 }
 
@@ -45,11 +45,23 @@ b {
 .card {
   background-color: rgba(0, 0, 0, 0.1);
   border: none !important;
-  min-height:240px;
+  min-height: 240px;
 }
 
+.modal-header,
+.modal-footer {
+  color: #fff;
+  border: none;
+  text-align: center!important;
+}
 .modal-css {
-  background:$blue;
+  color: #fff;
+  background: $blue;
+}
+
+.modal-content {
+  background: $blue;
+  text-align: center!important;
 }
 
 .blue1 {
