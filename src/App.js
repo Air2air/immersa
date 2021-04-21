@@ -38,19 +38,19 @@ const timePoints = [
     title: "Lead followup - 45 mins",
     color: "blue3",
     description:
-      "Higher sales conversion rates are coming from customers located in the midwest at this time.",
+      "With your current leads, it's not worth spending more time on followup",
     card1:
       "The highest performing salespeople in your department spend 44 min. per day on Lead followup.",
-    card2: "You could spend more time on lead followup",
+    card2: "Higher sales conversion rates are coming from customers located in the midwest at this time.",
   },
   {
     id: 4,
     title: "Check in with Steve at 11:15",
     color: "blue4",
-    description: "Steve sent you an email with some questions.",
+    description: "Steve sent you an email with some questions.  Try to get this done before today's peak sales period.",
     card1:
       "The rest of your day looks good for inbound calls.  These typically increase in the afternoon.",
-    card2: "You could spend more time on lead followup",
+    card2: "Spend about 20 minutes today answering emails from staff.",
   },
   {
     id: 5,
@@ -69,7 +69,7 @@ const timePoints = [
     description:
       "Sales activity dips during early August.  If you take a vacation then, your Q3 numbers should increase by about 4 percent.",
     card1:
-      "The rest of your day looks good for inbound calls.  These typically increase in the afternoon.",
+      "Your Q3 numbers are in the top 83%.",
     card2: "You take 10% less vacation time than other staff.",
   },
 ];
@@ -91,6 +91,7 @@ function StoryLine(props) {
             className="d-flex justify-content-around align-items-center flex-column p-5 mx-2"
           >
             <p>{timePoint.card1}</p>
+            <InfoModal />
           </Card>
           <Card
             style={{ height: "20vh" }}
@@ -98,6 +99,7 @@ function StoryLine(props) {
             className="d-flex justify-content-around align-items-center flex-column p-5 mx-2"
           >
             <p>{timePoint.card2}</p>
+
             <InfoModal />
           </Card>
         </CardDeck>
@@ -118,11 +120,10 @@ function InfoModal() {
     <>
       {/* <FontAwesomeIcon icon="coffee" size="lg" /> */}
       <Button variant="primary" onClick={handleShow}>
-        Launch demo modal
+        More info
       </Button>
       <Modal show={show} size="lg" onHide={handleClose}>
         <Modal.Header
-
           style={{
             display: "flex",
             justifyContent: "center",
