@@ -10,6 +10,7 @@ module.exports = {
   // mode: 'production',
   entry: { app: './src/index.js' },
   output: {
+    publicPath: '/',
     filename: '[name].[hash].js',
   },
   module: {
@@ -91,6 +92,7 @@ module.exports = {
     ],
   },
   devServer: {
+    historyApiFallback: true,
     contentBase: './dist',
     hot: true,
   },

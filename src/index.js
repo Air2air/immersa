@@ -1,72 +1,31 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { Link, BrowserRouter as Router, Route } from "react-router-dom";
-//import "./styles.css";
+import Header from "./components/header/header";
+import AboutPage from "./pages/about/about";
+import IssuesPage from "./pages/issues/issues";
+import IssuePage from "./pages/issues/issue";
 
-const users = [
-  {
-    name: `Param`
-  },
-  {
-    name: `Vennila`
-  },
-  {
-    name: `Afrin`
-  }
-];
+import "./styles/styles.scss";
 
 const IndexPage = () => {
   return <h3>Home Page</h3>;
 };
 
-const AboutPage = () => {
-  return <h3>About Page</h3>;
-};
-
-const UsersPage = () => {
-  return (
-    <>
-      {users.map((user, index) => (
-        <h5 key={index}>
-          <Link to={`/user/${index + 1}`}>{user.name}'s Page</Link>
-        </h5>
-      ))}
-    </>
-  );
-};
-
-const UserPage = ({ match, location }) => {
-  const {
-    params: { userId }
-  } = match;
-
-  return (
-    <>
-      <p>
-        <strong>User ID: </strong>
-        {userId}
-      </p>
-      <p>
-        <strong>User Name: </strong>
-        {users[userId - 1].name}
-      </p>
-    </>
-  );
-};
-
 const App = () => {
   return (
     <section className="App">
+      <Header />
       <Router>
         <Link to="/">Home</Link>
         <Link to="/about">About</Link>
-        <Link to="/users">Users</Link>
+        <Link to="/issues">Issues</Link>
         <Route exact path="/" component={IndexPage} />
-        <Route exact path="/users" component={UsersPage} />
-        <Route exact path="/user/:userId" component={UserPage} />
+        <Route exact path="/issues" component={IssuesPage} />
+        <Route exact path="/issue/:issueId" component={IssuePage} />
         <Route exact path="/about" component={AboutPage} />
       </Router>
-      <a href="/about">about with browser reload</a>
+
     </section>
   );
 };

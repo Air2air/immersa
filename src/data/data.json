@@ -1,0 +1,26 @@
+[
+  {
+    "name": "Applicants are slowing",
+    "department": "Human Resources",
+    "manager": "Stephanie Glick",
+    "description": "New job applications are down 34% over the last two weeks, compared to the number of job reqs available."
+  },
+  {
+    "name": "Floor temperature is low",
+    "department": "Facilities",
+    "manager": "Cho Sun Park",
+    "description": "Floor 3 and 4 temperatures are averaging 2.6 degrees cooler than other floors."
+  },
+  {
+    "name": "Longer time between product releases",
+    "department": "Engineering",
+    "manager": "Sumeet Mohdi",
+    "description": "Product release times are averaging 2.1 weeks longer than at this time in 2020."
+  },
+  {
+    "name": "Absenteeism in Marketing",
+    "department": "Human Resources",
+    "manager": "Carlos Juarez",
+    "description": "Marketing department staff are on premises 42% of the time they were at this time last year."
+  }
+]
