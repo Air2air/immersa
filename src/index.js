@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { Link, BrowserRouter as Router, Route } from "react-router-dom";
+import './styles/styles.scss';
 import Header from "./components/header/header";
 import AboutPage from "./pages/about/about";
 import IssuesPage from "./pages/issues/issues";
@@ -14,8 +15,9 @@ const IndexPage = () => {
 
 const App = () => {
   return (
+    <>
+    <Header />
     <section className="App">
-      <Header />
       <Router>
         <Link to="/">Home</Link>
         <Link to="/about">About</Link>
@@ -25,8 +27,8 @@ const App = () => {
         <Route exact path="/issue/:issueId" component={IssuePage} />
         <Route exact path="/about" component={AboutPage} />
       </Router>
-
     </section>
+    </>
   );
 };
 

@@ -10,7 +10,7 @@ const IssuesPage = () => {
     <>
       {issues.map((issue, index) => (
         <h5 key={index}>
-          <Link to={`/issue/${index + 1}`}>{issue.name}</Link>
+          <Link to={`/issue/${index + 1}`}>{issue.department}</Link>
         </h5>
       ))}
     </>
