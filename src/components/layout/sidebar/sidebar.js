@@ -10,7 +10,7 @@ export default class Sidebar extends React.Component {
   render() {
     return (
       <>
-        <Col xs={2} column="true">
+        <Col xs={2} column="true" className="sidebar">
           <div className="header-logo mb-4 mt-4">
             <img
               alt="Immersa"

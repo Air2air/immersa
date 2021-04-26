@@ -8,7 +8,6 @@ function Header() {
       <Navbar
         className="d-flex justify-content-between align-items-center p- 2"
       >
-
         <Nav className="ml-auto">
           <NavDropdown title="Dropdown" id="collasible-nav-dropdown">
             <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>

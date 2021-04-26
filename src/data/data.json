@@ -22,6 +22,13 @@
         "description": "Floor 3 and 4 temperatures are averaging 2.6 degrees cooler than other floors.",
         "sent": false,
         "dateTime": "2 days ago"
+      },
+      {
+        "name": "Floor temperature is high",
+        "manager": "Cho Sun Park",
+        "description": "Floor 3 and 4 temperatures are averaging 2.6 degrees cooler than other floors.",
+        "sent": false,
+        "dateTime": "2 days ago"
       }
     ]
   },
@@ -31,6 +38,13 @@
     "issues": [
       {
         "name": "Longer time between product releases",
+        "manager": "Sumeet Mohdi",
+        "description": "Product release times are averaging 2.1 weeks longer than at this time in 2020.",
+        "sent": false,
+        "dateTime": "Yesterday at 2:00"
+      },
+      {
+        "name": "Shorter time between product releases",
         "manager": "Sumeet Mohdi",
         "description": "Product release times are averaging 2.1 weeks longer than at this time in 2020.",
         "sent": false,

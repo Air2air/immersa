@@ -1,14 +1,12 @@
-.header-logo {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  img {
-    height: 24px;
+.sidebar {
+  font-size: 0.9em;
+
+  .header-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    img {
+      height: 24px;
+    }
   }
-}
-
-
-.react-icons {
-  color: gray!important;
-  fill: gray!important;
 }
