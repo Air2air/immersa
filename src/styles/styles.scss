@@ -9,6 +9,25 @@ body {
   font-size:1em;
 }
 
+h1,h2, h3, h4, h5, p {
+color:#000;
+}
+
+
 b {
   font-weight:600;
+}
+
+.caption {
+  text-transform: uppercase;
+  font-size: .9em;
+  font-weight:600;
+  color:#888;
+}
+
+span.badge {
+  font-size:100%;
+  &.badge-secondary {
+    background:#AAA;
+  }
 }
