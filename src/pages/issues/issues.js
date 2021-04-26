@@ -10,7 +10,7 @@ import {
   Badge,
 } from "react-bootstrap";
 import { BiTimeFive } from "react-icons/bi";
-import { FaUser } from "react-icons/fa";
+import { FaUser, FaChevronDown } from "react-icons/fa";
 import issuesJson from "./../../data/data.json";
 
 const data = issuesJson;
@@ -69,12 +69,15 @@ const eachDepartment = data.map((category) => {
               as={Card.Body}
               variant="link"
               eventKey={category.id}
-              className="d-flex action align-items-center justify-content-between p-2"
+              className="d-flex action align-items-center justify-content-between p-2" style={{cursor:"pointer"}}
             >
-              <div>{category.department}</div>
-              <Badge pill variant="danger">
-                {departmentIssuesList.length}
-              </Badge>
+              <div className="d-flex align-items-center justify-content-between" >
+                <Badge pill variant="danger" className="mr-4">
+                  {departmentIssuesList.length}
+                </Badge>
+                <div>{category.department}</div>
+              </div>
+              <FaChevronDown className="mr-2" />
             </Accordion.Toggle>
           </Card.Header>
           <Accordion.Collapse eventKey={category.id}>
