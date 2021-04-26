@@ -1,6 +1,6 @@
 [
   {
-    "id":1,
+    "id": 1,
     "department": "Human Resources",
     "issues": [
       {
@@ -13,7 +13,7 @@
     ]
   },
   {
-    "id":2,
+    "id": 2,
     "department": "Facilities",
     "issues": [
       {
@@ -26,7 +26,7 @@
     ]
   },
   {
-    "id":3,
+    "id": 3,
     "department": "Engineering",
     "issues": [
       {
@@ -39,7 +39,7 @@
     ]
   },
   {
-    "id":4,
+    "id": 4,
     "department": "Marketing",
     "issues": [
       {

@@ -8,11 +8,7 @@ function Header() {
       <Navbar
         className="d-flex justify-content-between align-items-center p- 2"
       >
-        <img
-          className="header-logo"
-          alt="Immersa"
-          src="https://secureservercdn.net/72.167.241.46/jpf.d19.myftpupload.com/wp-content/uploads/2021/03/immersa_logo_fullcolor-2.png"
-        />
+
         <Nav className="ml-auto">
           <NavDropdown title="Dropdown" id="collasible-nav-dropdown">
             <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>

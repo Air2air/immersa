@@ -1,92 +1,14 @@
 @import "./_colors.scss";
 @import "~bootstrap/scss/bootstrap";
 
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap');
 
 body {
   color: $body-text;
-  font-family: "Noto Sans JP", sans-serif;
-  font-size: 1.1em;
-}
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  color: $heading-text;
-}
-h1 {
-  font-size: 2.5em;
+  font-family: 'Open Sans', sans-serif;
+  font-size:1em;
 }
 
 b {
-  font-weight: bold;
-}
-
-.header-logo {
-  height: 30px;
-}
-
-.carousel-item {
-  height: 100vh;
-  text-align: center;
-  .d-flex {
-    margin: 0 auto;
-    height: 90vh;
-    width: 70%;
-    color: #fff;
-  }
-}
-
-.carousel-control-prev-icon,
-.carousel-control-next-icon {
-  background-size: 70px;
-  width: 100px;
-  height: 100px;
-}
-
-.card {
-  background-color: rgba(0, 0, 0, 0.1);
-  border: none !important;
-  min-height: 240px;
-}
-
-.modal-header,
-.modal-footer {
-  color: #fff;
-  border: none;
-  text-align: center!important;
-}
-.modal-css {
-  color: #fff;
-  background: $blue;
-}
-
-.modal-content {
-  background: $blue;
-  text-align: center!important;
-}
-
-.blue1 {
-  color: #fff;
-  background-color: $blue1;
-}
-.blue2 {
-  color: #fff;
-  background-color: $blue2;
-}
-
-.blue3 {
-  color: #000;
-  background-color: $blue3;
-}
-
-.blue4 {
-  color: #000;
-  background-color: $blue4;
-}
-
-.blue5 {
-  color: #000;
-  background-color: $blue5;
+  font-weight:600;
 }

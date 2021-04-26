@@ -16,11 +16,12 @@ const IssuePage = ({ match, location }) => {
       </p>
       <p>
         <strong>Issue Name: </strong>
-        {issues[issueId - 1].name}
+        {/* {issues[issueId - 1].name} */}
+        {issues.name}
       </p>
       <p>
         <strong>Age: </strong>
-        {issues[issueId - 1].dateTime}
+        {/* {issues[issueId - 1].dateTime} */}
       </p>
     </>
   );

@@ -1,6 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
-
+import { Accordion, Card, Button } from "react-bootstrap";
 import issuesJson from "./../../data/data.json";
 
 const issues = issuesJson;
@@ -8,11 +7,28 @@ const issues = issuesJson;
 const IssuesPage = () => {
   return (
     <>
-      {issues.map((issue, index) => (
-        <h5 key={index}>
-          <Link to={`/issue/${index + 1}`}>{issue.department}</Link>
-        </h5>
-      ))}
+      <Accordion>
+        <Card>
+          <Card.Header>
+            <Accordion.Toggle as={Button} variant="link" eventKey="0">
+              Click me!
+            </Accordion.Toggle>
+          </Card.Header>
+          <Accordion.Collapse eventKey="0">
+            <Card.Body>Hello! I'm the body</Card.Body>
+          </Accordion.Collapse>
+        </Card>
+        <Card>
+          <Card.Header>
+            <Accordion.Toggle as={Button} variant="link" eventKey="1">
+              Click me!
+            </Accordion.Toggle>
+          </Card.Header>
+          <Accordion.Collapse eventKey="1">
+            <Card.Body>Hello! I'm another body</Card.Body>
+          </Accordion.Collapse>
+        </Card>
+      </Accordion>
     </>
   );
 };

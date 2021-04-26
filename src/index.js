@@ -1,36 +1,33 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { Link, BrowserRouter as Router, Route } from "react-router-dom";
-import './styles/styles.scss';
-import Header from "./components/header/header";
-import AboutPage from "./pages/about/about";
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import { Container, Row, Col } from "react-bootstrap";
+
+
+import Sidebar from "./components/layout/sidebar/sidebar";
+import DashboardPage from "./pages/dashboard/dashboard";
+import ActivityPage from "./pages/activity/activity";
 import IssuesPage from "./pages/issues/issues";
-import IssuePage from "./pages/issues/issue";
 
 import "./styles/styles.scss";
 
-const IndexPage = () => {
-  return <h3>Home Page</h3>;
-};
-
-const App = () => {
-  return (
-    <>
-    <Header />
-    <section className="App">
-      <Router>
-        <Link to="/">Home</Link>
-        <Link to="/about">About</Link>
-        <Link to="/issues">Issues</Link>
-        <Route exact path="/" component={IndexPage} />
-        <Route exact path="/issues" component={IssuesPage} />
-        <Route exact path="/issue/:issueId" component={IssuePage} />
-        <Route exact path="/about" component={AboutPage} />
-      </Router>
-    </section>
-    </>
-  );
-};
+const App = () => (
+  <>
+    {/* <Header /> */}
+    <Router>
+      <Container fluid>
+        <Row>
+          <Sidebar />
+          <Col>
+            <Route exact path="/issues" component={IssuesPage} />
+            <Route exact path="/dashboard" component={DashboardPage} />
+            <Route exact path="/activity" component={ActivityPage} />
+          </Col>
+        </Row>
+      </Container>
+    </Router>
+  </>
+);
 
 const rootElement = document.getElementById("root");
 ReactDOM.render(<App />, rootElement);
