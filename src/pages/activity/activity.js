@@ -4,7 +4,7 @@ import { Card } from "react-bootstrap";
 const ActivityPage = () => {
   return (
     <>
-      <h3>ActivityPage</h3>
+      <h4>Activity Log</h4>
       <Card style={{ width: "18rem" }}>
         <Card.Body>
           <Card.Title>Card Title</Card.Title>

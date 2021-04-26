@@ -19,7 +19,7 @@ const eachDepartment = data.map((category) => {
   const departmentIssuesList = category.issues.map(function (item) {
     return (
       // Inner loop
-      <ListGroup.Item className="py-2" key={item.index}>
+      <ListGroup.Item className="py-2" key={item.id}>
         <Row>
           <Col xs={6} className="d-flex align-items-center caption py-2">
             <BiTimeFive className="mr-2" style={{ fill: "lightgray" }} />
@@ -69,9 +69,10 @@ const eachDepartment = data.map((category) => {
               as={Card.Body}
               variant="link"
               eventKey={category.id}
-              className="d-flex action align-items-center justify-content-between p-2" style={{cursor:"pointer"}}
+              className="d-flex action align-items-center justify-content-between p-2"
+              style={{ cursor: "pointer" }}
             >
-              <div className="d-flex align-items-center justify-content-between" >
+              <div className="d-flex align-items-center justify-content-between">
                 <Badge pill variant="danger" className="mr-4">
                   {departmentIssuesList.length}
                 </Badge>
@@ -82,7 +83,7 @@ const eachDepartment = data.map((category) => {
           </Card.Header>
           <Accordion.Collapse eventKey={category.id}>
             <Card.Body className="p-2">
-              <ListGroup variant="flush">{departmentIssuesList}</ListGroup>
+              <ListGroup variant="flush" >{departmentIssuesList }</ListGroup>
             </Card.Body>
           </Accordion.Collapse>
         </Card>
@@ -94,6 +95,7 @@ const eachDepartment = data.map((category) => {
 export default function IssuesPage() {
   return (
     <>
+      <h4>Issues</h4>
       <div className="categories mt-4">{eachDepartment}</div>
     </>
   );

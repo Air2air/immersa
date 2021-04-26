@@ -1,26 +1,63 @@
 import React from "react";
-import { Card } from "react-bootstrap";
+import {
+  Card,
+  Row,
+  Col,
+  Badge,
+  ButtonToolbar,
+  Button,
+} from "react-bootstrap";
+// import LineChart from "../../components/charts/lineChart";
+import PieChart from "../../components/charts/pieChart";
+import { BsFillGearFill } from "react-icons/bs";
+import { FaShareAlt } from "react-icons/fa";
 
-const DashboardPage = () => {
+export default function DashboardPage() {
   return (
     <>
-      <h3>DashboardPage</h3>
-      <Card style={{ width: "18rem" }}>
-        <Card.Body>
-          <Card.Title>Card Title</Card.Title>
-          <Card.Subtitle className="mb-2 text-muted">
-            Card Subtitle
-          </Card.Subtitle>
-          <Card.Text>
-            Some quick example text to build on the card title and make up the
-            bulk of the card's content.
-          </Card.Text>
-          <Card.Link href="#">Card Link</Card.Link>
-          <Card.Link href="#">Another Link</Card.Link>
-        </Card.Body>
-      </Card>
+      <h4>Dashboard</h4>
+      <Row>
+        <Col xs={6}>
+        <Card bg="info" text="white">
+            <Card.Body>
+              <Card.Title style={{textAlign:"center"}}>Employee response rates up 6%</Card.Title>
+              {/* <LineChart /> */}
+              <Row>
+                <Col className="d-flex justify-content-between p-2 px-4">
+                    <BsFillGearFill size="1.5em"/>
+                    <FaShareAlt size="1.5em"/>
+                </Col>
+              </Row>
+              </Card.Body>
+          </Card>
+        </Col>
+        <Col xs={6}>
+          <Card bg="danger" text="white">
+            <Card.Body>
+              <Card.Title style={{textAlign:"center"}}>Employee response rates up 6%</Card.Title>
+              <PieChart />
+              <Row>
+                <Col className="d-flex align-items-center py-2 caption">
+                  <Badge pill variant="secondary" className="mr-2">
+                    13
+                  </Badge>
+                  Responses received
+                </Col>
+                <Col className="py-2 ">
+                  <ButtonToolbar className="justify-content-end">
+                    <Button variant="danger" className="mr-3">
+                      Delete
+                    </Button>
+                    <Button variant="primary">Resend</Button>
+                  </ButtonToolbar>
+                </Col>
+              </Row>
+              </Card.Body>
+          </Card>
+        </Col>
+      </Row>
     </>
   );
 };
 
-export default DashboardPage
+
