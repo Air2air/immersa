@@ -5,7 +5,7 @@ const margin = { top: 30, right: 110, bottom: 30, left: 110 };
 
 const styles = {
   root: {
-    fontFamily: "consolas, sans-serif",
+    fontFamily: "Titillium Web, sans-serif",
     textAlign: "center",
     position: "relative",
     width: "100%",
