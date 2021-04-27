@@ -57,9 +57,8 @@ const data = [
 ];
 
 const theme = {
-  // background: "#222222",
+  fontSize: ".9em",
   axis: {
-    fontSize: "1.2em",
     tickColor: "#eee",
     ticks: {
       line: {
@@ -96,6 +95,7 @@ const legends = [
     itemOpacity: 0.85,
     itemTextColor: "#888",
     symbolSize: 20,
+    fontSize: "1.2em",
     effects: [
       {
         on: "hover",
@@ -118,7 +118,6 @@ const PieChart = () => (
       enableRadialLabels={false}
       enableSlicesLabels={false}
       theme={theme}
-      // legends={legends}
     />
     <div style={styles.overlay}>
       <span>5</span>

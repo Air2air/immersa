@@ -1,68 +1,59 @@
-// import React from "react";
-// import { VictoryBar, VictoryLabel, VictoryTooltip } from "victory";
+import React from "react";
+import { ResponsiveBar } from "@nivo/bar";
 
-// const data = [
-//   { quarter: 1, earnings: 13, label: "APAC" },
-//   { quarter: 2, earnings: 16, label: "EUROPE" },
-//   { quarter: 3, earnings: 14, label: "AMERICA" },
-//   { quarter: 4, earnings: 19, label: "AFRICA" },
-//   { quarter: 5, earnings: 12, label: "ASIA" },
-//   { quarter: 6, earnings: 29, label: "JAPAN" },
-//   { quarter: 7, earnings: 19, label: "CHINA" },
-// ];
+const styles = {
+  root: {
+    fontFamily: "consolas, sans-serif",
+    textAlign: "center",
+    position: "relative",
+    width: "100%",
+    height: 300,
+  },
+};
 
-// const sampleData = [
-//   { quarter: 1, earnings: 13 },
-//   { quarter: 2, earnings: 16 },
-//   { quarter: 3, earnings: 14 },
-//   { quarter: 4, earnings: 19 },
-//   { quarter: 5, earnings: 12 },
-//   { quarter: 6, earnings: 29 },
-//   { quarter: 7, earnings: 19 },
-// ];
+const theme = {
+  fontSize: ".9em",
+  axis: {
+    tickColor: "#eee",
+    ticks: {
+      line: {
+        stroke: "#fff",
+      },
+      text: {
+        fill: "#fff",
+      },
+    },
+    legend: {
+      text: {
+        fill: "#aaaaaa",
+      },
+    },
+  },
+  grid: {
+    line: {
+      stroke: "#fff",
+    },
+  },
+};
 
+const data = [
+  { department: "Marketing", issues: 130 },
+  { department: "HR", issues: 165 },
+  { department: "Engineering", issues: 142 },
+  { department: "Facilities", issues: 190 },
+];
 
+const BarChart = () => (
+  <div style={styles}>
+    <div style={{ height: "300px" }}>
+      <ResponsiveBar
+        data={data}
+        theme={theme}
+        keys={["issues"]}
+        indexBy="department"
+      />
+    </div>
+  </div>
+);
 
-// const BarChart = (props) => {
-//   return (
-//     <div className="App">
-//       <h1>Victory Charts Examples:</h1>
-
-//       <h2>Bar graph for zone quantity</h2>
-//       <VictoryBar
-//         cornerRadius={{ top: 10, bottom: 10 }}
-//         data={sampleData}
-//         x="quarter"
-//         y="earnings"
-//         // theme={VictoryTheme.material}
-//         labels={(d) => d.earnings}
-//         style={{
-//           labels: { fill: "white" },
-//           data: { fill: "orange" },
-//         }}
-//         // labelComponent={
-//         //   <VictoryLabel angle={0} verticalAnchor="middle" textAnchor="middle" />
-//         // }
-//         labelComponent={<VictoryLabel dy={30} />}
-//       />
-
-//       <VictoryBar
-//         cornerRadius={{ top: 10, bottom: 10 }}
-//         data={data}
-//         x="quarter"
-//         y="earnings"
-//         // theme={VictoryTheme.material}
-//         // labels={d => d.earnings}
-//         style={{
-//           labels: { fill: "black" },
-//           data: { fill: "orange" },
-//         }}
-//         labelComponent={
-//           <VictoryLabel angle={0} verticalAnchor="middle" textAnchor="middle" />
-//         }
-//       />
-//     </div>
-//   );
-// };
-
-// export default BarChart;
+export default BarChart;
