@@ -23,9 +23,7 @@ const styles = {
     justifyContent: "center",
     fontSize: "4em",
     color: "#FFFFFF",
-    // background: "#FFFFFF33",
     textAlign: "center",
-    // This is important to preserve the chart interactivity
     pointerEvents: "none",
   },
   totalLabel: {

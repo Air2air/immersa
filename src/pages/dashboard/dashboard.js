@@ -12,41 +12,35 @@ export default function DashboardPage() {
       <h4>Dashboard</h4>
       <Row>
         <Col xs={6}>
-          <Card bg="info" text="white">
+          <Card bg="info" text="white" style={{ height: "450px" }}>
             <Card.Body>
               <Card.Title style={{ textAlign: "center" }} className="mt-3">
-                Issues sent by department
+                Issues sent - by department
               </Card.Title>
               <BarChart />
-              <Row>
-                <Col className="d-flex justify-content-between p-2 px-4">
-                  <BsFillGearFill size="1.5em" />
-                  <FaShareAlt size="1.5em" />
-                </Col>
-              </Row>
             </Card.Body>
+            <Row>
+              <Col className="d-flex align-items-center justify-content-between m-4">
+                <BsFillGearFill size="1.5em" />
+                <FaShareAlt size="1.5em" />
+              </Col>
+            </Row>
           </Card>
         </Col>
         <Col xs={6}>
-          <Card bg="danger" text="white">
+          <Card bg="danger" text="white" style={{ height: "450px" }}>
             <Card.Body>
               <Card.Title style={{ textAlign: "center" }} className="mt-3">
                 Employee response rates up 6%
               </Card.Title>
               <PieChart />
               <Row>
-                <Col className="d-flex align-items-center py-2 caption">
-                  <Badge pill variant="secondary" className="mr-2">
-                    13
-                  </Badge>
-                  Responses received
-                </Col>
-                <Col className="py-2 ">
+              <Col xs={12} className="d-flex align-items-center justify-content-end m-2 caption">
                   <ButtonToolbar className="justify-content-end">
-                    <Button variant="danger" className="mr-3">
-                      Delete
+                    <Button variant="secondary" className="mr-3">
+                      Refresh
                     </Button>
-                    <Button variant="primary">Resend</Button>
+                    <Button variant="warning">Optimize</Button>
                   </ButtonToolbar>
                 </Col>
               </Row>
@@ -59,7 +53,9 @@ export default function DashboardPage() {
         <Col xs={12} className="mt-3">
           <Card bg="primary" text="white">
             <Card.Body>
-              <Card.Title style={{ textAlign: "center" }} className="mt-3">Responses - all departments</Card.Title>
+              <Card.Title style={{ textAlign: "center" }} className="mt-3">
+                Responses - all departments
+              </Card.Title>
               <CalendarChart />
               <Row>
                 <Col className="d-flex justify-content-between p-2 px-4">
