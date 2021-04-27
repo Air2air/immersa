@@ -8,6 +8,8 @@ import {
   Row,
   Col,
   Badge,
+  DropdownButton,
+  Dropdown,
 } from "react-bootstrap";
 import { BiTimeFive } from "react-icons/bi";
 import { FaUser, FaChevronDown } from "react-icons/fa";
@@ -83,7 +85,7 @@ const eachDepartment = data.map((category) => {
           </Card.Header>
           <Accordion.Collapse eventKey={category.id}>
             <Card.Body className="p-2">
-              <ListGroup variant="flush" >{departmentIssuesList }</ListGroup>
+              <ListGroup variant="flush">{departmentIssuesList}</ListGroup>
             </Card.Body>
           </Accordion.Collapse>
         </Card>
@@ -95,8 +97,20 @@ const eachDepartment = data.map((category) => {
 export default function IssuesPage() {
   return (
     <>
-      <h4>Issues</h4>
-      <div className="categories mt-4">{eachDepartment}</div>
+      <Row>
+        <Col className="d-flex justify-content-between">
+          <h4 className="mb-4">Issues</h4>
+          <DropdownButton
+            variant="outline-secondary"
+            id="dropdown-item-button"
+            title="This week"
+          >
+            <Dropdown.Item as="button">Last 14 days</Dropdown.Item>
+            <Dropdown.Item as="button">Last 30 days</Dropdown.Item>
+          </DropdownButton>
+        </Col>
+      </Row>
+      <div className="categories">{eachDepartment}</div>
     </>
   );
 }

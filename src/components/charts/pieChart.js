@@ -29,6 +29,9 @@ const styles = {
   totalLabel: {
     fontSize: ".2em",
   },
+  tooltip: {
+    color: "#000"
+  }
 };
 
 const data = [
@@ -116,6 +119,7 @@ const PieChart = () => (
       enableRadialLabels={false}
       enableSlicesLabels={false}
       theme={theme}
+
     />
     <div style={styles.overlay}>
       <span>5</span>

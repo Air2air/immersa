@@ -7,7 +7,7 @@ import Sidebar from "./components/layout/sidebar/sidebar";
 import Header from "./components/layout/header/header";
 
 import DashboardPage from "./pages/dashboard/dashboard";
-import ActivityPage from "./pages/activity/activity";
+import HomePage from "./pages/home/home";
 import IssuesPage from "./pages/issues/issues";
 
 import "./styles/styles.scss";
@@ -19,10 +19,10 @@ const App = () => (
         <Row>
           <Sidebar />
           <Col>
-          <Header />
+            <Header />
+            <Route exact path="/" component={HomePage} />
             <Route exact path="/issues" component={IssuesPage} />
             <Route exact path="/dashboard" component={DashboardPage} />
-            <Route exact path="/activity" component={ActivityPage} />
           </Col>
         </Row>
       </Container>

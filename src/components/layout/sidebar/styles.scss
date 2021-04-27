@@ -1,12 +1,23 @@
 .sidebar {
-  font-size: 0.9em;
-
+  font-size: 0.93em;
+  background: #eee;
+  height: 100vh!important;
+  overflow: hidden;
   .header-logo {
     display: flex;
     justify-content: center;
     align-items: center;
     img {
       height: 24px;
+    }
+  }
+  .nav-link {
+    background:none;
+    border-radius: 4px;
+    color:#888;
+    &:hover {
+      color:#000;
+      background:#ddd;
     }
   }
 }

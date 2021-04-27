@@ -1,25 +1,41 @@
 import React from "react";
-import { Navbar, Nav, NavDropdown } from "react-bootstrap";
+import {
+  Navbar,
+  Nav,
+  FormControl,
+  Button,
+  InputGroup,
+} from "react-bootstrap";
+import { BsFillGearFill } from "react-icons/bs";
+import { FaBell, FaUserAlt } from "react-icons/fa";
 import "./styles.scss";
 
 function Header() {
   return (
     <>
-      <Navbar
-        className="d-flex justify-content-between align-items-center p- 2"
-      >
+      <Navbar className="d-flex justify-content-between align-items-center p-4 mb-4">
+        {/* <Form inline>
+            <FormControl type="text" placeholder="Search" className="mr-sm-2" />
+            <Button variant="outline-primary">Search</Button>
+          </Form> */}
+        <Nav className="mr-auto pl-0">
+          <InputGroup className="m-0 p-0">
+            <FormControl
+              placeholder=" "
+              aria-label=" "
+              aria-describedby="basic-addon2"
+            />
+            <InputGroup.Append>
+              <Button variant="outline-secondary">Search</Button>
+            </InputGroup.Append>
+          </InputGroup>
+        </Nav>
+
         <Nav className="ml-auto">
-          <NavDropdown title="Dropdown" id="collasible-nav-dropdown">
-            <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-            <NavDropdown.Item href="#action/3.2">
-              Another action
-            </NavDropdown.Item>
-            <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-            <NavDropdown.Divider />
-            <NavDropdown.Item href="#action/3.4">
-              Separated link
-            </NavDropdown.Item>
-          </NavDropdown>
+          <FaBell size="1.5em" className="mx-4" style={{ fill: "#AAA" }}/>
+          <BsFillGearFill size="1.5em" className="mx-4" style={{ fill: "#AAA" }}/>
+          <FaUserAlt size="1.5em" className="ml-4" style={{ fill: "#AAA" }}/>
+          <p className="mx-2">Todd Dunning</p>
         </Nav>
       </Navbar>
     </>

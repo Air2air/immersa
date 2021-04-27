@@ -1,5 +1,5 @@
 import React from "react";
-import { Card, Row, Col, Badge, ButtonToolbar, Button } from "react-bootstrap";
+import { Card, Row, Col, Dropdown, DropdownButton, ButtonToolbar, Button } from "react-bootstrap";
 import BarChart from "../../components/charts/barChart";
 import CalendarChart from "../../components/charts/calendarChart";
 import PieChart from "../../components/charts/pieChart";
@@ -9,7 +9,21 @@ import { FaShareAlt } from "react-icons/fa";
 export default function DashboardPage() {
   return (
     <>
-      <h4>Dashboard</h4>
+      <Row>
+        <Col className="d-flex justify-content-between">
+          <h4 className="mb-4">Dashboard</h4>
+          <DropdownButton
+            variant="outline-secondary"
+            id="dropdown-item-button"
+            title="This week"
+          >
+            <Dropdown.Item as="button">Last 14 days</Dropdown.Item>
+            <Dropdown.Item as="button">Last 30 days</Dropdown.Item>
+          </DropdownButton>
+        </Col>
+      </Row>
+
+
       <Row>
         <Col xs={6}>
           <Card bg="info" text="white" style={{ height: "450px" }}>
@@ -50,7 +64,7 @@ export default function DashboardPage() {
       </Row>
 
       <Row>
-        <Col xs={12} className="mt-3">
+        <Col xs={12} className="mt-4">
           <Card bg="primary" text="white">
             <Card.Body>
               <Card.Title style={{ textAlign: "center" }} className="mt-3">

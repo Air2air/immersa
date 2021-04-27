@@ -1,8 +1,8 @@
 import React from "react";
-import { ListGroup, Col } from "react-bootstrap";
+import { ListGroup, Col, Nav } from "react-bootstrap";
 
 import { GoAlert } from "react-icons/go";
-import { FiSend } from "react-icons/fi";
+import { AiFillHome } from "react-icons/ai";
 import { RiDashboardFill } from "react-icons/ri";
 import "./styles.scss";
 
@@ -10,28 +10,28 @@ export default class Sidebar extends React.Component {
   render() {
     return (
       <>
-        <Col xs={2} column="true" className="sidebar">
-          <div className="header-logo mb-4 mt-4">
+        <Col xs={2} column="true" className="sidebar mr-4">
+          <div className="header-logo p-2 mb-5 mt-4">
             <img
               alt="Immersa"
               src="https://secureservercdn.net/72.167.241.46/jpf.d19.myftpupload.com/wp-content/uploads/2021/03/immersa_logo_fullcolor-2.png"
             />
           </div>
 
-          <ListGroup variant="flush">
-            <ListGroup.Item action href="/issues" className="py-4">
-              <GoAlert className="mr-3" style={{ fill: "lightgray" }} />
+          <Nav defaultActiveKey="/home" className="flex-column">
+            <Nav.Link href="/" className="py-3">
+              <AiFillHome className="mr-3" style={{ fill: "#AAA" }} />
+              Home
+            </Nav.Link>
+            <Nav.Link href="/issues" className="py-3">
+              <GoAlert className="mr-3" style={{ fill: "#AAA" }} />
               Issues
-            </ListGroup.Item>
-            <ListGroup.Item action href="/dashboard" className="py-4">
-              <RiDashboardFill className="mr-3" style={{ fill: "lightgray" }} />
+            </Nav.Link>
+            <Nav.Link href="/dashboard" className="py-3">
+              <RiDashboardFill className="mr-3" style={{ fill: "#AAA" }} />
               Dashboard
-            </ListGroup.Item>
-            <ListGroup.Item action href="/activity" className="py-4">
-              <FiSend className="mr-3" style={{ stroke: "lightgray" }} />
-              Activity
-            </ListGroup.Item>
-          </ListGroup>
+            </Nav.Link>
+          </Nav>
         </Col>
       </>
     );

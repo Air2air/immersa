@@ -37,7 +37,7 @@ const theme = {
 };
 
 const commonProperties = {
-    margin: { top: 60, right: 80, bottom: 60, left: 80 },
+    margin: { top: 40, right: 40, bottom: 40, left: 60 },
     padding: 0.3,
     labelTextColor: "#fff",
     labelSkipWidth: 16,
